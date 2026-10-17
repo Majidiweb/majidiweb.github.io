@@ -3,33 +3,30 @@
 <html lang="fa" dir="rtl">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#101b2d">
-  <meta name="description" content="مجیدی‌پور؛ طراح سایت، توسعه‌دهنده وردپرس و متخصص سئو با بیش از ۸ سال تجربه.">
-  <meta name="robots" content="index, follow">
-  <title>مجیدی‌پور | طراحی سایت، توسعه و سئو</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0b1220">
+  <meta name="description" content="مجیدی‌پور، طراح و توسعه‌دهنده وب و متخصص سئو با بیش از ۸ سال تجربه در طراحی سایت‌های حرفه‌ای، وردپرس و بهینه‌سازی موتورهای جستجو.">
+  <title>مجیدی‌پور | طراحی سایت، توسعه وب و سئو</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
   <style>
     :root {
-      --bg: #0b1220;
-      --panel: #111d30;
-      --panel-light: #172740;
-      --text: #f2f6fb;
-      --muted: #a9b7c9;
+      --bg: #080e1a;
+      --panel: #101b2d;
+      --panel2: #132239;
       --mint: #71beb0;
-      --border: rgba(255,255,255,.10);
-      --radius: 20px;
+      --mint-light: #b1f0df;
+      --blue: #82aaff;
+      --text: #f3f7fc;
+      --muted: #a2b0c5;
+      --line: rgba(255,255,255,.09);
+      --radius: 24px;
     }
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+    * { box-sizing: border-box; }
 
     html {
       scroll-behavior: smooth;
@@ -37,37 +34,44 @@
     }
 
     body {
+      margin: 0;
       font-family: "Vazirmatn", Tahoma, sans-serif;
-      background:
-        radial-gradient(ellipse at 90% 0%, rgba(113,190,176,.13), transparent 35%),
-        var(--bg);
       color: var(--text);
+      background:
+        radial-gradient(ellipse at 5% 10%, rgba(113,190,176,.09), transparent 35%),
+        radial-gradient(ellipse at 95% 35%, rgba(82,126,220,.08), transparent 30%),
+        var(--bg);
       line-height: 1.9;
+      overflow-x: hidden;
     }
 
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
-
-    button, a {
-      -webkit-tap-highlight-color: transparent;
-    }
+    a { color: inherit; text-decoration: none; }
+    button { font: inherit; }
 
     .container {
-      width: min(1100px, calc(100% - 40px));
+      width: min(1120px, calc(100% - 40px));
       margin-inline: auto;
     }
 
-    /* Header */
+    .icon {
+      width: 23px;
+      height: 23px;
+      display: inline-block;
+      flex: 0 0 auto;
+      stroke: currentColor;
+      fill: none;
+      stroke-width: 1.7;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
 
-    .header {
+    .site-header {
       position: sticky;
       top: 0;
-      z-index: 100;
-      background: rgba(11,18,32,.91);
-      backdrop-filter: blur(16px);
-      border-bottom: 1px solid var(--border);
+      z-index: 50;
+      background: rgba(8,14,26,.82);
+      border-bottom: 1px solid var(--line);
+      backdrop-filter: blur(18px);
     }
 
     .nav {
@@ -78,210 +82,428 @@
       gap: 24px;
     }
 
-    .logo {
-      font-size: 1.2rem;
-      font-weight: 800;
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 900;
+      font-size: 18px;
       white-space: nowrap;
     }
 
-    .logo span {
-      color: var(--mint);
+    .brand-mark {
+      width: 42px;
+      height: 42px;
+      display: grid;
+      place-items: center;
+      border-radius: 14px;
+      color: #07131a;
+      background: linear-gradient(135deg, var(--mint-light), var(--mint));
+      box-shadow: 0 6px 24px rgba(113,190,176,.18);
     }
+
+    .brand-mark .icon { width: 25px; height: 25px; }
 
     .nav-links {
       display: flex;
       align-items: center;
-      gap: 24px;
+      gap: 25px;
       color: var(--muted);
-      font-size: .9rem;
+      font-size: 13px;
     }
 
-    .nav-links a {
-      transition: color .2s;
-    }
+    .nav-links a { transition: color .2s; }
+    .nav-links a:hover { color: var(--mint-light); }
 
-    .nav-links a:hover {
-      color: var(--mint);
-    }
-
-    /* Buttons */
-
-    .btn {
+    .nav-cta {
       display: inline-flex;
-      justify-content: center;
       align-items: center;
       gap: 8px;
-      padding: 11px 20px;
+      padding: 10px 17px;
       border-radius: 12px;
-      border: 1px solid var(--border);
-      font-family: inherit;
-      font-size: .93rem;
+      background: rgba(113,190,176,.1);
+      border: 1px solid rgba(113,190,176,.28);
+      color: var(--mint-light);
+      font-size: 13px;
       font-weight: 700;
-      transition: transform .2s, background .2s;
+      white-space: nowrap;
+      transition: .25s;
     }
 
-    .btn:hover {
-      transform: translateY(-3px);
-    }
-
-    .btn-primary {
+    .nav-cta:hover {
       background: var(--mint);
-      color: #09201e;
-      border-color: var(--mint);
+      color: #07131a;
+      transform: translateY(-2px);
     }
-
-    .btn-outline {
-      background: rgba(255,255,255,.03);
-    }
-
-    /* Hero */
 
     .hero {
-      padding-top: 95px;
-      padding-bottom: 85px;
+      min-height: 610px;
       display: grid;
-      grid-template-columns: 1.35fr .8fr;
-      gap: 55px;
+      grid-template-columns: 1.1fr .9fr;
       align-items: center;
+      gap: 60px;
+      padding-block: 86px 96px;
+      position: relative;
     }
+
+    .hero-copy { position: relative; z-index: 2; }
 
     .eyebrow {
       display: inline-flex;
       align-items: center;
-      gap: 10px;
-      color: var(--mint);
-      font-size: .95rem;
+      gap: 9px;
+      color: var(--mint-light);
+      background: rgba(113,190,176,.08);
+      border: 1px solid rgba(113,190,176,.2);
+      border-radius: 100px;
+      padding: 6px 13px;
+      font-size: 12px;
       font-weight: 700;
     }
 
-    .status-dot {
-      width: 9px;
-      height: 9px;
+    .live-dot {
+      width: 8px;
+      height: 8px;
       border-radius: 50%;
       background: var(--mint);
-      box-shadow: 0 0 15px var(--mint);
+      box-shadow: 0 0 0 5px rgba(113,190,176,.12);
+      animation: pulse 2s infinite;
     }
 
-    .hero h1 {
-      margin: 20px 0;
-      font-size: clamp(2.2rem, 5vw, 3.9rem);
-      line-height: 1.45;
-      letter-spacing: -1.3px;
+    h1 {
+      font-size: clamp(35px, 4.5vw, 58px);
+      line-height: 1.55;
+      margin: 22px 0 16px;
+      font-weight: 900;
+      letter-spacing: -1.8px;
     }
 
-    .hero h1 span {
-      color: var(--mint);
+    .gradient-text {
+      background: linear-gradient(100deg, var(--mint-light), var(--mint), #94b6ff);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
     }
 
     .hero-description {
-      max-width: 650px;
+      max-width: 580px;
       color: var(--muted);
-      font-size: 1.06rem;
-      margin-bottom: 28px;
+      font-size: 16px;
+      line-height: 2.2;
+      margin: 0;
     }
 
     .hero-actions {
       display: flex;
-      gap: 12px;
       flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 29px;
     }
 
-    .hero-card {
-      padding: 28px;
-      border: 1px solid rgba(113,190,176,.28);
-      border-radius: 26px;
-      background: linear-gradient(145deg, rgba(113,190,176,.13), var(--panel));
-      box-shadow: 0 25px 70px rgba(0,0,0,.18);
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 13px 20px;
+      border-radius: 13px;
+      font-size: 14px;
+      font-weight: 800;
+      transition: transform .25s, box-shadow .25s, background .25s;
     }
 
-    .monogram {
-      width: 78px;
-      height: 78px;
+    .btn:hover { transform: translateY(-3px); }
+
+    .btn-primary {
+      color: #07131a;
+      background: linear-gradient(120deg, var(--mint-light), var(--mint));
+      box-shadow: 0 8px 30px rgba(113,190,176,.16);
+    }
+
+    .btn-primary:hover { box-shadow: 0 12px 34px rgba(113,190,176,.27); }
+
+    .btn-outline {
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.025);
+      color: var(--text);
+    }
+
+    .btn-outline:hover { border-color: var(--mint); }
+
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      margin-top: 31px;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .hero-meta span {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+    }
+
+    .hero-meta .icon { width: 17px; height: 17px; color: var(--mint); }
+
+    /* کادر گرافیکی سمت چپ */
+    .hero-visual {
+      position: relative;
+      min-height: 405px;
       display: grid;
       place-items: center;
-      border-radius: 22px;
-      background: rgba(113,190,176,.13);
-      border: 1px solid rgba(113,190,176,.4);
-      color: var(--mint);
-      font-size: 1.9rem;
-      font-weight: 800;
-      margin-bottom: 22px;
+      isolation: isolate;
     }
 
-    .hero-card h2 {
-      font-size: 1.25rem;
-      margin-bottom: 8px;
+    .visual-glow {
+      position: absolute;
+      width: 300px;
+      height: 300px;
+      background: rgba(113,190,176,.15);
+      filter: blur(75px);
+      border-radius: 50%;
+      z-index: -1;
     }
 
-    .hero-card > p {
-      color: var(--muted);
-      font-size: .95rem;
+    .visual-ring {
+      position: absolute;
+      width: 350px;
+      height: 350px;
+      border: 1px solid rgba(113,190,176,.14);
+      border-radius: 50%;
+      animation: rotate 35s linear infinite;
     }
 
-    .facts {
+    .visual-ring::before,
+    .visual-ring::after {
+      content: "";
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      background: var(--mint);
+      border-radius: 50%;
+      box-shadow: 0 0 20px var(--mint);
+    }
+
+    .visual-ring::before { top: 55px; right: 35px; }
+    .visual-ring::after { bottom: 45px; left: 25px; background: var(--blue); }
+
+    .hero-card {
+      position: relative;
+      width: min(100%, 350px);
+      min-height: 330px;
+      padding: 27px;
+      overflow: hidden;
+      border-radius: 28px;
+      border: 1px solid rgba(255,255,255,.13);
+      background: linear-gradient(145deg, rgba(22,38,60,.97), rgba(12,23,39,.97));
+      box-shadow: 0 35px 90px rgba(0,0,0,.3), inset 0 1px rgba(255,255,255,.06);
+      animation: float 6s ease-in-out infinite;
+    }
+
+    .hero-card::before {
+      content: "";
+      position: absolute;
+      width: 190px;
+      height: 190px;
+      top: -100px;
+      left: -80px;
+      border-radius: 50%;
+      background: rgba(113,190,176,.18);
+      filter: blur(20px);
+    }
+
+    .card-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: relative;
+    }
+
+    .card-status {
+      color: var(--mint-light);
+      font-size: 11px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .card-symbol {
+      width: 46px;
+      height: 46px;
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 12px;
-      margin-top: 25px;
+      place-items: center;
+      border-radius: 15px;
+      color: var(--mint-light);
+      background: rgba(113,190,176,.1);
+      border: 1px solid rgba(113,190,176,.2);
     }
 
-    .fact {
-      padding: 13px;
-      background: rgba(255,255,255,.035);
-      border: 1px solid var(--border);
-      border-radius: 13px;
+    .card-symbol .icon { width: 26px; height: 26px; }
+
+    .card-slogan {
+      position: relative;
+      margin-top: 31px;
+      font-size: 26px;
+      font-weight: 900;
+      line-height: 1.9;
+      letter-spacing: -.5px;
     }
 
-    .fact strong {
-      display: block;
-      color: var(--mint);
-      font-size: 1.05rem;
+    .card-slogan em {
+      color: var(--mint-light);
+      font-style: normal;
     }
 
-    .fact small {
+    .card-caption {
       color: var(--muted);
+      font-size: 12px;
+      margin-top: 8px;
     }
 
-    /* General sections */
-
-    section {
-      padding: 70px 0;
+    .card-divider {
+      height: 1px;
+      background: var(--line);
+      margin: 22px 0 17px;
     }
+
+    .card-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      color: var(--muted);
+      font-size: 11px;
+    }
+
+    .mini-stack { display: flex; align-items: center; }
+
+    .mini-stack span {
+      width: 29px;
+      height: 29px;
+      margin-right: -7px;
+      border: 2px solid #132239;
+      border-radius: 10px;
+      display: grid;
+      place-items: center;
+      color: var(--mint-light);
+      background: #1c3046;
+      font-size: 10px;
+      font-weight: 800;
+    }
+
+    .floating-tag {
+      position: absolute;
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      padding: 12px 15px;
+      border-radius: 15px;
+      background: rgba(18,31,50,.95);
+      border: 1px solid rgba(255,255,255,.1);
+      box-shadow: 0 15px 40px rgba(0,0,0,.22);
+      color: var(--text);
+      font-size: 12px;
+      font-weight: 700;
+      animation: float 5s ease-in-out infinite;
+    }
+
+    .floating-tag .icon { color: var(--mint); }
+    .tag-one { top: 40px; right: -12px; }
+    .tag-two { bottom: 40px; left: -20px; animation-delay: -2s; }
+
+    .section { padding-block: 75px; }
 
     .section-heading {
-      margin-bottom: 30px;
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 24px;
+      margin-bottom: 32px;
     }
 
-    .section-label {
+    .section-kicker {
       color: var(--mint);
-      font-size: .87rem;
+      font-size: 12px;
       font-weight: 800;
+      letter-spacing: .3px;
     }
 
-    .section-heading h2 {
-      font-size: clamp(1.7rem, 3vw, 2.35rem);
-      margin: 5px 0 10px;
+    h2 {
+      font-size: clamp(25px, 3vw, 35px);
+      line-height: 1.6;
+      margin: 5px 0 0;
+      font-weight: 900;
     }
 
-    .section-heading p {
-      max-width: 760px;
+    .section-intro {
+      max-width: 420px;
       color: var(--muted);
+      font-size: 13px;
+      margin: 0;
+      line-height: 2;
     }
 
-    /* About */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
 
-    .about-box {
-      padding: 30px;
-      background: var(--panel);
-      border: 1px solid var(--border);
+    .panel {
+      background: linear-gradient(145deg, rgba(18,31,50,.94), rgba(13,24,41,.94));
+      border: 1px solid var(--line);
       border-radius: var(--radius);
+      padding: 27px;
+      transition: border-color .25s, transform .25s;
     }
 
-    .about-box p {
+    .panel:hover { border-color: rgba(113,190,176,.3); }
+
+    .about-text {
       color: var(--muted);
+      font-size: 14px;
+      line-height: 2.3;
+      margin: 12px 0 0;
     }
 
-    /* Skills */
+    .about-highlight {
+      display: flex;
+      gap: 13px;
+      align-items: flex-start;
+      margin-top: 20px;
+      padding: 15px;
+      border-radius: 15px;
+      background: rgba(113,190,176,.06);
+      border: 1px solid rgba(113,190,176,.12);
+    }
+
+    .about-highlight .icon { color: var(--mint); margin-top: 3px; }
+    .about-highlight strong { display: block; font-size: 13px; }
+    .about-highlight p { color: var(--muted); font-size: 12px; margin: 4px 0 0; }
+
+    .strength-list { display: grid; gap: 18px; margin-top: 22px; }
+
+    .strength {
+      display: flex;
+      align-items: flex-start;
+      gap: 13px;
+    }
+
+    .strength-icon {
+      width: 43px;
+      height: 43px;
+      display: grid;
+      place-items: center;
+      flex-shrink: 0;
+      border-radius: 14px;
+      color: var(--mint-light);
+      background: rgba(113,190,176,.09);
+    }
+
+    .strength strong { display: block; font-size: 14px; }
+    .strength p { color: var(--muted); font-size: 12px; margin: 3px 0 0; }
 
     .skills-grid {
       display: grid;
@@ -290,633 +512,698 @@
     }
 
     .skill-card {
-      padding: 21px;
+      min-height: 145px;
+      padding: 22px 17px;
+      border-radius: 19px;
       background: var(--panel);
-      border: 1px solid var(--border);
-      border-radius: 17px;
-      transition: transform .2s, border-color .2s;
+      border: 1px solid var(--line);
+      transition: transform .25s, border-color .25s, background .25s;
     }
 
     .skill-card:hover {
-      transform: translateY(-4px);
-      border-color: rgba(113,190,176,.45);
+      transform: translateY(-6px);
+      border-color: rgba(113,190,176,.42);
+      background: var(--panel2);
     }
 
     .skill-icon {
+      width: 47px;
+      height: 47px;
       display: grid;
       place-items: center;
-      width: 42px;
-      height: 42px;
-      border-radius: 12px;
-      margin-bottom: 14px;
-      color: var(--mint);
-      background: rgba(113,190,176,.12);
-      font-size: .8rem;
-      font-weight: 800;
+      border-radius: 15px;
+      color: var(--mint-light);
+      background: linear-gradient(135deg, rgba(113,190,176,.16), rgba(113,190,176,.035));
+      border: 1px solid rgba(113,190,176,.13);
+      margin-bottom: 13px;
     }
 
-    .skill-card h3 {
-      font-size: 1rem;
-      margin-bottom: 7px;
-    }
-
-    .skill-card p {
-      color: var(--muted);
-      font-size: .88rem;
-    }
-
-    /* Projects */
+    .skill-icon .icon { width: 25px; height: 25px; }
+    .skill-card strong { display: block; font-size: 14px; }
+    .skill-card p { margin: 3px 0 0; color: var(--muted); font-size: 11px; }
 
     .projects-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      gap: 22px;
+      gap: 20px;
     }
 
     .project-card {
-      display: flex;
-      flex-direction: column;
+      position: relative;
       overflow: hidden;
+      border-radius: 23px;
       background: var(--panel);
-      border: 1px solid var(--border);
-      border-radius: 22px;
-      transition: transform .25s, border-color .25s;
+      border: 1px solid var(--line);
+      transition: transform .3s, border-color .3s;
     }
 
     .project-card:hover {
-      transform: translateY(-5px);
-      border-color: rgba(113,190,176,.4);
+      transform: translateY(-6px);
+      border-color: rgba(113,190,176,.38);
     }
 
     .project-cover {
-      min-height: 180px;
-      display: flex;
-      align-items: flex-end;
-      justify-content: space-between;
-      gap: 15px;
-      padding: 24px;
-      background: linear-gradient(135deg, rgba(113,190,176,.22), var(--panel-light));
-      border-bottom: 1px solid var(--border);
+      position: relative;
+      min-height: 190px;
+      display: grid;
+      place-items: center;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 30% 30%, rgba(113,190,176,.2), transparent 42%),
+        linear-gradient(135deg, #14253a, #0d1728);
     }
 
-    .project-cover .project-number {
-      color: var(--muted);
-      font-size: .82rem;
+    .project-cover::before {
+      content: "";
+      position: absolute;
+      width: 230px;
+      height: 230px;
+      border: 1px solid rgba(255,255,255,.07);
+      border-radius: 50%;
     }
 
-    .project-cover h3 {
-      font-size: 1.8rem;
-      color: var(--mint);
-      margin-top: 8px;
+    .project-cover::after {
+      content: "";
+      position: absolute;
+      width: 175px;
+      height: 175px;
+      border: 1px dashed rgba(113,190,176,.23);
+      border-radius: 50%;
     }
 
-    .project-cover .project-type {
-      color: var(--muted);
-      font-size: .85rem;
+    .project-logo {
+      z-index: 1;
+      width: 83px;
+      height: 83px;
+      display: grid;
+      place-items: center;
+      border-radius: 25px;
+      background: rgba(8,14,26,.65);
+      border: 1px solid rgba(255,255,255,.13);
+      box-shadow: 0 20px 45px rgba(0,0,0,.25);
+      color: var(--mint-light);
     }
 
-    .project-body {
-      padding: 25px;
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      flex: 1;
+    .project-logo .icon { width: 43px; height: 43px; }
+
+    .project-number {
+      position: absolute;
+      z-index: 2;
+      top: 17px;
+      right: 18px;
+      font-size: 11px;
+      color: rgba(255,255,255,.65);
+      letter-spacing: 2px;
     }
 
-    .project-body h3 {
-      font-size: 1.3rem;
-      margin-bottom: 10px;
-    }
+    .project-body { padding: 24px; }
+    .project-body h3 { font-size: 20px; margin: 0; }
+    .project-body > p { color: var(--muted); font-size: 13px; line-height: 2.1; }
 
-    .project-body > p {
-      color: var(--muted);
-      font-size: .95rem;
-      margin-bottom: 18px;
-    }
-
-    .tags {
+    .project-tags {
       display: flex;
       flex-wrap: wrap;
+      gap: 7px;
+      margin: 17px 0 22px;
+    }
+
+    .project-tags span {
+      font-size: 10px;
+      padding: 5px 10px;
+      border-radius: 8px;
+      color: var(--mint-light);
+      background: rgba(113,190,176,.07);
+      border: 1px solid rgba(113,190,176,.13);
+    }
+
+    .project-link {
+      display: inline-flex;
+      align-items: center;
       gap: 8px;
-      margin-bottom: 22px;
+      font-size: 12px;
+      font-weight: 800;
+      color: var(--mint-light);
     }
 
-    .tag {
-      padding: 4px 10px;
-      border-radius: 50px;
-      color: var(--mint);
-      background: rgba(113,190,176,.09);
-      border: 1px solid rgba(113,190,176,.2);
-      font-size: .78rem;
-    }
-
-    .project-body .btn {
-      margin-top: auto;
-    }
-
-    /* Services */
+    .project-link .icon { width: 17px; height: 17px; transition: transform .2s; }
+    .project-link:hover .icon { transform: translateX(-4px); }
 
     .services-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 18px;
+      gap: 16px;
     }
 
     .service-card {
-      padding: 25px;
-      background: var(--panel);
-      border: 1px solid var(--border);
-      border-radius: 19px;
+      padding: 24px;
+      border: 1px solid var(--line);
+      background: rgba(16,27,45,.8);
+      border-radius: 21px;
+      transition: .25s;
     }
 
-    .service-number {
-      color: var(--mint);
-      font-weight: 800;
-      margin-bottom: 13px;
+    .service-card:hover {
+      transform: translateY(-5px);
+      border-color: rgba(113,190,176,.38);
     }
 
-    .service-card h3 {
-      font-size: 1.15rem;
-      margin-bottom: 10px;
+    .service-card .service-icon {
+      width: 52px;
+      height: 52px;
+      display: grid;
+      place-items: center;
+      border-radius: 17px;
+      color: var(--mint-light);
+      background: rgba(113,190,176,.09);
+      margin-bottom: 16px;
     }
 
-    .service-card p {
-      color: var(--muted);
-      font-size: .93rem;
-    }
+    .service-icon .icon { width: 27px; height: 27px; }
+    .service-card h3 { font-size: 16px; margin: 0; }
+    .service-card p { font-size: 12px; color: var(--muted); line-height: 2.2; margin-bottom: 0; }
 
-    /* Contact */
-
-    .contact-box {
-      padding: 35px;
+    .contact-panel {
+      position: relative;
+      overflow: hidden;
+      padding: 42px;
+      border-radius: 28px;
+      border: 1px solid rgba(113,190,176,.2);
+      background:
+        radial-gradient(ellipse at 100% 0%, rgba(113,190,176,.12), transparent 50%),
+        linear-gradient(135deg, #13243a, #0e192a);
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 25px;
-      border: 1px solid rgba(113,190,176,.25);
-      border-radius: 24px;
-      background: linear-gradient(130deg, rgba(113,190,176,.13), var(--panel));
+      gap: 30px;
     }
 
-    .contact-box h2 {
-      font-size: 1.7rem;
-      margin-bottom: 8px;
-    }
+    .contact-panel h2 { margin-top: 0; }
+    .contact-panel p { color: var(--muted); font-size: 13px; margin-bottom: 0; max-width: 560px; }
 
-    .contact-box p {
-      color: var(--muted);
-      max-width: 650px;
+    .contact-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      flex-shrink: 0;
     }
-
-    /* Footer */
 
     footer {
-      margin-top: 35px;
+      border-top: 1px solid var(--line);
       padding: 25px 0;
-      border-top: 1px solid var(--border);
       color: var(--muted);
-      font-size: .86rem;
+      font-size: 11px;
     }
 
     .footer-inner {
       display: flex;
-      align-items: center;
       justify-content: space-between;
+      align-items: center;
       gap: 15px;
-      flex-wrap: wrap;
     }
 
-    .back-top {
-      color: var(--mint);
+    .footer-inner strong { color: var(--mint-light); }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity .7s ease, transform .7s ease;
     }
 
-    /* Responsive */
+    .reveal.visible { opacity: 1; transform: translateY(0); }
 
-    @media (max-width: 900px) {
-      .hero {
-        grid-template-columns: 1fr;
-        padding-top: 65px;
-        gap: 32px;
-      }
-
-      .hero-card {
-        max-width: 560px;
-      }
-
-      .skills-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .services-grid {
-        grid-template-columns: 1fr;
-      }
+    @keyframes pulse {
+      0%,100% { box-shadow: 0 0 0 4px rgba(113,190,176,.12); }
+      50% { box-shadow: 0 0 0 8px rgba(113,190,176,0); }
     }
 
-    @media (max-width: 600px) {
-      .container {
-        width: calc(100% - 28px);
-      }
-
-      .nav {
-        padding: 12px 0;
-        align-items: flex-start;
-        flex-direction: column;
-        gap: 8px;
-      }
-
-      .nav-links {
-        width: 100%;
-        overflow-x: auto;
-        gap: 19px;
-        padding-bottom: 4px;
-        white-space: nowrap;
-      }
-
-      .hero {
-        padding-top: 48px;
-        padding-bottom: 48px;
-      }
-
-      .hero h1 {
-        font-size: 2.15rem;
-      }
-
-      .hero-description {
-        font-size: .97rem;
-      }
-
-      .hero-card {
-        padding: 22px;
-      }
-
-      section {
-        padding: 48px 0;
-      }
-
-      .skills-grid {
-        gap: 10px;
-      }
-
-      .skill-card {
-        padding: 15px;
-      }
-
-      .projects-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .project-cover {
-        min-height: 145px;
-      }
-
-      .contact-box {
-        padding: 24px;
-        align-items: flex-start;
-        flex-direction: column;
-      }
-
-      .contact-box h2 {
-        font-size: 1.4rem;
-      }
+    @keyframes float {
+      0%,100% { transform: translateY(0); }
+      50% { transform: translateY(-9px); }
     }
+
+    @keyframes rotate { to { transform: rotate(360deg); } }
 
     @media (prefers-reduced-motion: reduce) {
-      html {
-        scroll-behavior: auto;
-      }
-
       *, *::before, *::after {
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
         transition-duration: .01ms !important;
       }
+      .reveal { opacity: 1; transform: none; }
+    }
+
+    @media (max-width: 900px) {
+      .nav-links { gap: 13px; }
+      .hero { gap: 25px; padding-block: 65px; }
+      .hero-visual { transform: scale(.92); }
+      .skills-grid { grid-template-columns: repeat(3, 1fr); }
+      .services-grid { grid-template-columns: repeat(2, 1fr); }
+      .contact-panel { align-items: flex-start; flex-direction: column; }
+    }
+
+    @media (max-width: 650px) {
+      .container { width: min(100% - 30px, 520px); }
+      .nav { min-height: 67px; }
+      .brand { font-size: 15px; }
+      .brand-mark { width: 37px; height: 37px; }
+      .nav-links { display: none; }
+      .nav-cta { padding: 9px 11px; font-size: 11px; }
+
+      .hero {
+        grid-template-columns: 1fr;
+        gap: 24px;
+        padding-block: 55px 55px;
+      }
+
+      h1 { font-size: clamp(32px, 9vw, 43px); letter-spacing: -1px; }
+      .hero-description { font-size: 14px; }
+      .hero-visual { min-height: 380px; transform: none; margin-inline: 7px; }
+      .hero-card { width: min(100%, 340px); }
+      .visual-ring { width: 305px; height: 305px; }
+      .tag-one { right: -4px; }
+      .tag-two { left: -5px; }
+      .section { padding-block: 52px; }
+      .section-heading { align-items: flex-start; flex-direction: column; gap: 10px; }
+      .about-grid, .projects-grid { grid-template-columns: 1fr; }
+      .skills-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+      .skill-card { min-height: 130px; padding: 17px 14px; }
+      .services-grid { grid-template-columns: 1fr; }
+      .panel { padding: 22px; }
+      .contact-panel { padding: 26px 22px; }
+      .contact-actions { width: 100%; }
+      .contact-actions .btn { flex: 1; }
+      .footer-inner { flex-direction: column; align-items: flex-start; }
     }
   </style>
 </head>
 
 <body>
 
-  <header class="header">
-    <div class="container">
-      <nav class="nav" aria-label="منوی اصلی">
-        <a href="#home" class="logo">مجیدی‌پور<span>.</span></a>
+  <!-- آیکون‌های SVG داخلی؛ بدون نیاز به کتابخانه خارجی -->
+  <svg xmlns="http://www.w3.org/2000/svg" style="position:absolute;width:0;height:0;overflow:hidden" aria-hidden="true">
+    <symbol id="i-code" viewBox="0 0 24 24">
+      <path d="m8 17-5-5 5-5M16 7l5 5-5 5M14 4l-4 16"/>
+    </symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24">
+      <path d="M19 12H5M12 19l-7-7 7-7"/>
+    </symbol>
+    <symbol id="i-external" viewBox="0 0 24 24">
+      <path d="M14 4h6v6M20 4 10 14"/>
+      <path d="M18 13v6a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h6"/>
+    </symbol>
+    <symbol id="i-check" viewBox="0 0 24 24">
+      <path d="m5 12 4 4L19 6"/>
+    </symbol>
+    <symbol id="i-briefcase" viewBox="0 0 24 24">
+      <rect x="3" y="7" width="18" height="14" rx="2"/>
+      <path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M3 12h18M10 12v2h4v-2"/>
+    </symbol>
+    <symbol id="i-layers" viewBox="0 0 24 24">
+      <path d="m12 3 9 5-9 5-9-5 9-5Z"/>
+      <path d="m3 12 9 5 9-5M3 16l9 5 9-5"/>
+    </symbol>
+    <symbol id="i-search" viewBox="0 0 24 24">
+      <circle cx="11" cy="11" r="7"/>
+      <path d="m20 20-4-4"/>
+    </symbol>
+    <symbol id="i-layout" viewBox="0 0 24 24">
+      <rect x="3" y="3" width="18" height="18" rx="3"/>
+      <path d="M3 9h18M9 21V9"/>
+    </symbol>
+    <symbol id="i-mobile" viewBox="0 0 24 24">
+      <rect x="6" y="2" width="12" height="20" rx="2"/>
+      <path d="M11 18h2"/>
+    </symbol>
+    <symbol id="i-database" viewBox="0 0 24 24">
+      <ellipse cx="12" cy="5" rx="9" ry="3"/>
+      <path d="M3 5v14c0 1.7 4 3 9 3s9-1.3 9-3V5M3 12c0 1.7 4 3 9 3s9-1.3 9-3"/>
+    </symbol>
+    <symbol id="i-chart" viewBox="0 0 24 24">
+      <path d="M3 3v18h18M7 14l4-4 4 3 6-7"/>
+    </symbol>
+    <symbol id="i-rocket" viewBox="0 0 24 24">
+      <path d="M4.5 16.5c-1.5 1.3-2 5-2 5s3.7-.5 5-2c.7-.8.7-2 0-2.8a2 2 0 0 0-3 0Z"/>
+      <path d="m12 15-3-3a22 22 0 0 1 2-3c3-3.5 7-5 11-5 0 4-1.5 8-5 11a22 22 0 0 1-3 2l-2-2Z"/>
+      <circle cx="15" cy="9" r="2"/>
+      <path d="M9 12H5l-3 4h6M12 15v4l-4 3"/>
+    </symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24">
+      <rect x="3" y="5" width="18" height="14" rx="2"/>
+      <path d="m3 7 9 6 9-6"/>
+    </symbol>
+    <symbol id="i-globe" viewBox="0 0 24 24">
+      <circle cx="12" cy="12" r="10"/>
+      <path d="M2 12h20M12 2a15 15 0 0 1 0 20M12 2a15 15 0 0 0 0 20"/>
+    </symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24">
+      <path d="M12 22s8-4 8-11V5l-8-3-8 3v6c0 7 8 11 8 11Z"/>
+      <path d="m9 12 2 2 4-4"/>
+    </symbol>
+    <symbol id="i-star" viewBox="0 0 24 24">
+      <path d="m12 3 2.8 5.7 6.2.9-4.5 4.4 1.1 6.2-5.6-3-5.6 3 1.1-6.2L3 9.6l6.2-.9L12 3Z"/>
+    </symbol>
+  </svg>
 
-        <div class="nav-links">
-          <a href="#about">درباره من</a>
-          <a href="#skills">مهارت‌ها</a>
-          <a href="#projects">نمونه‌کارها</a>
-          <a href="#services">خدمات</a>
-          <a href="#contact">تماس</a>
-        </div>
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="#home" aria-label="صفحه اصلی">
+        <span class="brand-mark">
+          <svg class="icon"><use href="#i-code"/></svg>
+        </span>
+        <span>مجیدی‌پور <span class="gradient-text">.</span></span>
+      </a>
+
+      <nav class="nav-links" aria-label="منوی اصلی">
+        <a href="#about">درباره من</a>
+        <a href="#skills">مهارت‌ها</a>
+        <a href="#projects">نمونه‌کارها</a>
+        <a href="#services">خدمات</a>
       </nav>
+
+      <a class="nav-cta" href="#contact">
+        همکاری با من
+        <svg class="icon"><use href="#i-arrow"/></svg>
+      </a>
     </div>
   </header>
 
   <main>
-
-    <!-- Hero -->
-    <div class="container hero" id="home">
-      <div class="hero-content">
-        <div class="eyebrow">
-          <span class="status-dot"></span>
-          طراحی سایت، توسعه و سئو
-        </div>
+    <section class="container hero" id="home">
+      <div class="hero-copy">
+        <div class="eyebrow"><span class="live-dot"></span> طراح و توسعه‌دهنده وب | متخصص سئو</div>
 
         <h1>
-          وب‌سایتی بسازیم که<br>
-          <span>زیبا، سریع و نتیجه‌محور</span> باشد.
+          وب‌سایتی که فقط زیبا نیست؛
+          <span class="gradient-text">نتیجه می‌سازد.</span>
         </h1>
 
         <p class="hero-description">
-          مجیدی‌پور هستم؛ طراح و توسعه‌دهنده وب با بیش از ۸ سال تجربه در طراحی
-          سایت، پیاده‌سازی امکانات کاربردی و بهینه‌سازی برای موتورهای جست‌وجو.
-          تمرکز من ساخت تجربه‌ای حرفه‌ای، قابل استفاده و متناسب با نیاز کسب‌وکار شماست.
+          مجیدی‌پور هستم؛ با بیش از ۸ سال تجربه در طراحی و توسعه وب‌سایت،
+          وردپرس و سئو. کمک می‌کنم کسب‌وکارها حضوری حرفه‌ای‌تر در فضای
+          دیجیتال داشته باشند و تجربه بهتری برای کاربران خود بسازند.
         </p>
 
         <div class="hero-actions">
-          <a class="btn btn-primary" href="#projects">مشاهده نمونه‌کارها ←</a>
-          <a class="btn btn-outline" href="#contact">شروع همکاری</a>
+          <a class="btn btn-primary" href="#projects">
+            مشاهده نمونه‌کارها
+            <svg class="icon"><use href="#i-arrow"/></svg>
+          </a>
+          <a class="btn btn-outline" href="#contact">
+            <svg class="icon"><use href="#i-mail"/></svg>
+            شروع همکاری
+          </a>
+        </div>
+
+        <div class="hero-meta">
+          <span><svg class="icon"><use href="#i-check"/></svg> طراحی واکنش‌گرا</span>
+          <span><svg class="icon"><use href="#i-check"/></svg> توسعه وردپرس</span>
+          <span><svg class="icon"><use href="#i-check"/></svg> سئو و بهینه‌سازی</span>
         </div>
       </div>
 
-      <aside class="hero-card">
-        <div class="monogram">م‌پ</div>
+      <div class="hero-visual" aria-label="کارت معرفی طراح وب">
+        <div class="visual-glow"></div>
+        <div class="visual-ring"></div>
 
-        <h2>از ایده تا اجرای وب‌سایت</h2>
+        <div class="hero-card">
+          <div class="card-top">
+            <div class="card-status"><span class="live-dot"></span> آماده خلق تجربه‌های بهتر</div>
+            <div class="card-symbol"><svg class="icon"><use href="#i-code"/></svg></div>
+          </div>
 
-        <p>
-          طراحی واکنش‌گرا، توسعه امکانات، بهبود تجربه کاربری و سئوی فنی و محتوایی.
+          <div class="card-slogan">
+            ایده‌ات را به یک
+            <em>تجربه دیجیتال حرفه‌ای</em>
+            تبدیل می‌کنم.
+          </div>
+
+          <div class="card-caption">از طراحی و توسعه تا بهینه‌سازی و رشد وب‌سایت</div>
+
+          <div class="card-divider"></div>
+
+          <div class="card-bottom">
+            <span>ابزارهای اصلی من</span>
+            <div class="mini-stack" aria-label="وردپرس، کدنویسی و سئو">
+              <span>WP</span><span>JS</span><span>SEO</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="floating-tag tag-one">
+          <svg class="icon"><use href="#i-layout"/></svg>
+          طراحی اختصاصی
+        </div>
+
+        <div class="floating-tag tag-two">
+          <svg class="icon"><use href="#i-chart"/></svg>
+          تمرکز بر عملکرد و سئو
+        </div>
+      </div>
+    </section>
+
+    <section class="container section reveal" id="about">
+      <div class="section-heading">
+        <div>
+          <div class="section-kicker">ABOUT ME / درباره من</div>
+          <h2>ترکیب طراحی، فناوری و نگاه سئو</h2>
+        </div>
+        <p class="section-intro">
+          هدف فقط ساخت یک صفحه زیبا نیست؛ وب‌سایتی می‌سازیم که استفاده از آن
+          ساده باشد، درست کار کند و قابلیت توسعه داشته باشد.
         </p>
+      </div>
 
-        <div class="facts">
-          <div class="fact">
-            <strong>۸+ سال</strong>
-            <small>تجربه تخصصی</small>
-          </div>
-
-          <div class="fact">
-            <strong>WordPress</strong>
-            <small>طراحی و توسعه سایت</small>
-          </div>
-
-          <div class="fact">
-            <strong>Responsive</strong>
-            <small>سازگار با موبایل</small>
-          </div>
-
-          <div class="fact">
-            <strong>SEO</strong>
-            <small>بهینه‌سازی سایت</small>
-          </div>
-        </div>
-      </aside>
-    </div>
-
-    <!-- About -->
-    <section id="about">
-      <div class="container">
-        <div class="section-heading">
-          <span class="section-label">درباره من</span>
-          <h2>ترکیب طراحی، اجرا و بهینه‌سازی</h2>
-        </div>
-
-        <div class="about-box">
-          <p>
-            در طراحی و توسعه وب‌سایت، فقط به ظاهر صفحات توجه نمی‌کنم؛
-            ساختار محتوا، مسیر حرکت کاربر، نمایش صحیح در موبایل،
-            نگهداری‌پذیری و اصول سئو نیز بخش مهمی از کار هستند.
-            در پروژه‌های وردپرسی و فروشگاهی، تلاش می‌کنم راهکارهایی
-            متناسب با هدف واقعی کسب‌وکار و نیاز کاربران پیاده‌سازی کنم.
-            تجربه کار با وردپرس، المنتور، ووکامرس، HTML، CSS و JavaScript
-            به من کمک کرده است تا در طراحی و سفارشی‌سازی وب‌سایت‌ها
-            رویکردی کاربردی داشته باشم.
+      <div class="about-grid">
+        <article class="panel">
+          <h3>من چه کاری انجام می‌دهم؟</h3>
+          <p class="about-text">
+            در طراحی و توسعه وب‌سایت‌های وردپرسی، پیاده‌سازی صفحات با Elementor،
+            بهینه‌سازی تجربه کاربری و سئو فعالیت می‌کنم. در پروژه‌ها، علاوه بر
+            ظاهر سایت، به سرعت، ساختار صفحات، نسخه موبایل و نیازهای واقعی
+            کسب‌وکار توجه دارم.
           </p>
-        </div>
+          <div class="about-highlight">
+            <svg class="icon"><use href="#i-star"/></svg>
+            <div>
+              <strong>نگاه پروژه‌محور</strong>
+              <p>راهکار متناسب با هدف، مخاطب و نیازهای هر کسب‌وکار</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="panel">
+          <h3>اصولی که در کارم دنبال می‌کنم</h3>
+          <div class="strength-list">
+            <div class="strength">
+              <span class="strength-icon"><svg class="icon"><use href="#i-layout"/></svg></span>
+              <div><strong>تجربه کاربری</strong><p>ساختار روشن، دسترسی آسان و طراحی سازگار با موبایل</p></div>
+            </div>
+            <div class="strength">
+              <span class="strength-icon"><svg class="icon"><use href="#i-code"/></svg></span>
+              <div><strong>توسعه قابل نگهداری</strong><p>توجه به ساختار، کیفیت کد و امکان توسعه آینده</p></div>
+            </div>
+            <div class="strength">
+              <span class="strength-icon"><svg class="icon"><use href="#i-search"/></svg></span>
+              <div><strong>نگاه سئو محور</strong><p>توجه به ساختار محتوا، سئوی فنی و عملکرد سایت</p></div>
+            </div>
+          </div>
+        </article>
       </div>
     </section>
 
-    <!-- Skills -->
-    <section id="skills">
-      <div class="container">
-        <div class="section-heading">
-          <span class="section-label">مهارت‌ها</span>
-          <h2>ابزارها و حوزه‌های تخصصی</h2>
-          <p>از طراحی و مدیریت سایت تا توسعه رابط کاربری و بهینه‌سازی برای جست‌وجو.</p>
+    <section class="container section reveal" id="skills">
+      <div class="section-heading">
+        <div>
+          <div class="section-kicker">SKILLS / مهارت‌ها</div>
+          <h2>ابزارهایی برای ساخت راهکارهای بهتر</h2>
         </div>
+        <p class="section-intro">از طراحی رابط کاربری تا مدیریت سایت و بهینه‌سازی برای موتورهای جستجو.</p>
+      </div>
 
-        <div class="skills-grid">
-          <article class="skill-card">
-            <div class="skill-icon">WP</div>
-            <h3>WordPress</h3>
-            <p>راه‌اندازی، مدیریت و سفارشی‌سازی وب‌سایت‌های وردپرسی.</p>
-          </article>
-
-          <article class="skill-card">
-            <div class="skill-icon">EL</div>
-            <h3>Elementor</h3>
-            <p>طراحی صفحات و پیاده‌سازی چیدمان‌های اختصاصی.</p>
-          </article>
-
-          <article class="skill-card">
-            <div class="skill-icon">CSS</div>
-            <h3>HTML و CSS</h3>
-            <p>پیاده‌سازی رابط کاربری و استایل‌های واکنش‌گرا.</p>
-          </article>
-
-          <article class="skill-card">
-            <div class="skill-icon">JS</div>
-            <h3>JavaScript</h3>
-            <p>سفارشی‌سازی تعاملات و رفتارهای رابط کاربری.</p>
-          </article>
-
-          <article class="skill-card">
-            <div class="skill-icon">PHP</div>
-            <h3>PHP</h3>
-            <p>آشنایی با توسعه و سفارشی‌سازی بخش‌های وردپرس.</p>
-          </article>
-
-          <article class="skill-card">
-            <div class="skill-icon">WC</div>
-            <h3>WooCommerce</h3>
-            <p>بهبود صفحات محصول، سبد خرید و تجربه خرید فروشگاهی.</p>
-          </article>
-
-          <article class="skill-card">
-            <div class="skill-icon">SEO</div>
-            <h3>سئو</h3>
-            <p>بهینه‌سازی فنی و محتوایی صفحات برای موتورهای جست‌وجو.</p>
-          </article>
-
-          <article class="skill-card">
-            <div class="skill-icon">GSC</div>
-            <h3>تحلیل داده</h3>
-            <p>کار با Search Console و بررسی عملکرد صفحات در جست‌وجو.</p>
-          </article>
-        </div>
+      <div class="skills-grid">
+        <article class="skill-card">
+          <span class="skill-icon"><svg class="icon"><use href="#i-globe"/></svg></span>
+          <strong>WordPress</strong><p>مدیریت و توسعه سایت</p>
+        </article>
+        <article class="skill-card">
+          <span class="skill-icon"><svg class="icon"><use href="#i-layout"/></svg></span>
+          <strong>Elementor</strong><p>طراحی صفحات وب</p>
+        </article>
+        <article class="skill-card">
+          <span class="skill-icon"><svg class="icon"><use href="#i-code"/></svg></span>
+          <strong>HTML & CSS</strong><p>ساختار و استایل صفحات</p>
+        </article>
+        <article class="skill-card">
+          <span class="skill-icon"><svg class="icon"><use href="#i-rocket"/></svg></span>
+          <strong>JavaScript</strong><p>تعامل و پویایی صفحات</p>
+        </article>
+        <article class="skill-card">
+          <span class="skill-icon"><svg class="icon"><use href="#i-database"/></svg></span>
+          <strong>PHP</strong><p>توسعه و سفارشی‌سازی</p>
+        </article>
+        <article class="skill-card">
+          <span class="skill-icon"><svg class="icon"><use href="#i-layers"/></svg></span>
+          <strong>WooCommerce</strong><p>فروشگاه اینترنتی</p>
+        </article>
+        <article class="skill-card">
+          <span class="skill-icon"><svg class="icon"><use href="#i-search"/></svg></span>
+          <strong>SEO</strong><p>بهینه‌سازی سایت</p>
+        </article>
+        <article class="skill-card">
+          <span class="skill-icon"><svg class="icon"><use href="#i-chart"/></svg></span>
+          <strong>تحلیل سایت</strong><p>Search Console و Analytics</p>
+        </article>
       </div>
     </section>
 
-    <!-- Projects -->
-    <section id="projects">
-      <div class="container">
-        <div class="section-heading">
-          <span class="section-label">نمونه‌کارها</span>
+    <section class="container section reveal" id="projects">
+      <div class="section-heading">
+        <div>
+          <div class="section-kicker">SELECTED WORK / نمونه‌کارها</div>
           <h2>پروژه‌هایی که روی آن‌ها کار کرده‌ام</h2>
-          <p>
-            نمونه‌هایی از تجربه‌های اجرایی من در وب‌سایت شرکتی و فروشگاه اینترنتی.
-          </p>
         </div>
+        <p class="section-intro">نمونه‌هایی از تجربه من در مدیریت، توسعه و بهینه‌سازی وب‌سایت‌های واقعی.</p>
+      </div>
 
-        <div class="projects-grid">
-
-          <article class="project-card">
-            <div class="project-cover">
-              <div>
-                <div class="project-type">وب‌سایت شرکتی · تصفیه آب</div>
-                <h3>ABNAB</h3>
-              </div>
-              <span class="project-number">پروژه ۰۱</span>
+      <div class="projects-grid">
+        <article class="project-card">
+          <div class="project-cover">
+            <span class="project-number">PROJECT / 01</span>
+            <div class="project-logo"><svg class="icon"><use href="#i-globe"/></svg></div>
+          </div>
+          <div class="project-body">
+            <h3>آب‌ناب | تجهیزات تصفیه آب</h3>
+            <p>
+              همکاری در پشتیبانی فنی، توسعه صفحات و بهینه‌سازی وب‌سایت حوزه
+              تصفیه آب صنعتی و نیمه‌صنعتی با تمرکز بر ساختار محتوا و سئو.
+            </p>
+            <div class="project-tags">
+              <span>WordPress</span><span>Elementor</span><span>SEO</span><span>پشتیبانی فنی</span>
             </div>
+            <a class="project-link" href="https://abnab.ir/" target="_blank" rel="noopener noreferrer">
+              مشاهده وب‌سایت
+              <svg class="icon"><use href="#i-external"/></svg>
+            </a>
+          </div>
+        </article>
 
-            <div class="project-body">
-              <h3>وب‌سایت آب‌ناب</h3>
-
-              <p>
-                همکاری در طراحی و پشتیبانی فنی وب‌سایت حوزه تجهیزات تصفیه آب
-                صنعتی و نیمه‌صنعتی؛ شامل کار با وردپرس و المنتور، بهبود بخش‌هایی
-                از صفحات و پشتیبانی از فعالیت‌های سئو.
-              </p>
-
-              <div class="tags">
-                <span class="tag">WordPress</span>
-                <span class="tag">Elementor</span>
-                <span class="tag">پشتیبانی فنی</span>
-                <span class="tag">SEO</span>
-              </div>
-
-              <a
-                class="btn btn-outline"
-                href="https://abnab.ir/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                مشاهده وب‌سایت ↗
-              </a>
+        <article class="project-card">
+          <div class="project-cover">
+            <span class="project-number">PROJECT / 02</span>
+            <div class="project-logo"><svg class="icon"><use href="#i-layers"/></svg></div>
+          </div>
+          <div class="project-body">
+            <h3>موژان گالری | فروشگاه آنلاین</h3>
+            <p>
+              فعالیت در طراحی و سفارشی‌سازی فروشگاه ووکامرسی، بهبود رابط کاربری،
+              استایل صفحات محصول و سبد خرید و رسیدگی به جزئیات تجربه خرید.
+            </p>
+            <div class="project-tags">
+              <span>WooCommerce</span><span>Elementor</span><span>CSS</span><span>UX</span>
             </div>
-          </article>
-
-          <article class="project-card">
-            <div class="project-cover">
-              <div>
-                <div class="project-type">فروشگاه اینترنتی · دکوراسیون</div>
-                <h3>MO GALLERY</h3>
-              </div>
-              <span class="project-number">پروژه ۰۲</span>
-            </div>
-
-            <div class="project-body">
-              <h3>فروشگاه موژان گالری</h3>
-
-              <p>
-                طراحی و توسعه بخش‌هایی از فروشگاه محصولات دکوری با وردپرس،
-                المنتور و ووکامرس؛ از جمله سفارشی‌سازی ظاهر صفحات،
-                بهبود تجربه موبایل، سبد خرید و بخش‌هایی از فرایند خرید.
-              </p>
-
-              <div class="tags">
-                <span class="tag">WooCommerce</span>
-                <span class="tag">Elementor</span>
-                <span class="tag">CSS</span>
-                <span class="tag">تجربه کاربری</span>
-              </div>
-
-              <a
-                class="btn btn-outline"
-                href="https://mogallery.ir/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                مشاهده وب‌سایت ↗
-              </a>
-            </div>
-          </article>
-
-        </div>
+            <a class="project-link" href="https://mogallery.ir/" target="_blank" rel="noopener noreferrer">
+              مشاهده وب‌سایت
+              <svg class="icon"><use href="#i-external"/></svg>
+            </a>
+          </div>
+        </article>
       </div>
     </section>
 
-    <!-- Services -->
-    <section id="services">
-      <div class="container">
-        <div class="section-heading">
-          <span class="section-label">خدمات</span>
+    <section class="container section reveal" id="services">
+      <div class="section-heading">
+        <div>
+          <div class="section-kicker">SERVICES / خدمات</div>
           <h2>چطور می‌توانم به کسب‌وکار شما کمک کنم؟</h2>
         </div>
+      </div>
 
-        <div class="services-grid">
-          <article class="service-card">
-            <div class="service-number">۰۱ — طراحی</div>
-            <h3>طراحی و راه‌اندازی سایت</h3>
-            <p>
-              طراحی سایت شرکتی و فروشگاهی با وردپرس و المنتور،
-              متناسب با هویت و اهداف کسب‌وکار.
-            </p>
-          </article>
-
-          <article class="service-card">
-            <div class="service-number">۰۲ — توسعه</div>
-            <h3>توسعه و پشتیبانی</h3>
-            <p>
-              سفارشی‌سازی صفحات و امکانات، رفع ایرادهای فنی
-              و بهبود نمایش سایت در موبایل و دسکتاپ.
-            </p>
-          </article>
-
-          <article class="service-card">
-            <div class="service-number">۰۳ — بهینه‌سازی</div>
-            <h3>سئو و بهبود عملکرد</h3>
-            <p>
-              بررسی فنی و محتوایی سایت، تحلیل داده‌های جست‌وجو
-              و اولویت‌بندی فرصت‌های بهبود.
-            </p>
-          </article>
-        </div>
+      <div class="services-grid">
+        <article class="service-card">
+          <span class="service-icon"><svg class="icon"><use href="#i-layout"/></svg></span>
+          <h3>طراحی سایت وردپرسی</h3>
+          <p>طراحی وب‌سایت شرکتی، خدماتی و فروشگاهی با توجه به هویت برند و نیاز مخاطبان.</p>
+        </article>
+        <article class="service-card">
+          <span class="service-icon"><svg class="icon"><use href="#i-code"/></svg></span>
+          <h3>توسعه و سفارشی‌سازی</h3>
+          <p>پیاده‌سازی تغییرات ظاهری و عملکردی، CSS اختصاصی و بهبود بخش‌های مختلف سایت.</p>
+        </article>
+        <article class="service-card">
+          <span class="service-icon"><svg class="icon"><use href="#i-search"/></svg></span>
+          <h3>سئو و بهینه‌سازی</h3>
+          <p>بررسی ساختار فنی، بهینه‌سازی صفحات و کمک به بهبود حضور سایت در نتایج جستجو.</p>
+        </article>
+        <article class="service-card">
+          <span class="service-icon"><svg class="icon"><use href="#i-mobile"/></svg></span>
+          <h3>بهینه‌سازی موبایل</h3>
+          <p>بررسی نمایش صفحات در اندازه‌های مختلف و اصلاح مشکلات رابط کاربری.</p>
+        </article>
+        <article class="service-card">
+          <span class="service-icon"><svg class="icon"><use href="#i-briefcase"/></svg></span>
+          <h3>پشتیبانی وب‌سایت</h3>
+          <p>رسیدگی به مشکلات فنی، اعمال تغییرات و نگهداری مستمر وب‌سایت.</p>
+        </article>
+        <article class="service-card">
+          <span class="service-icon"><svg class="icon"><use href="#i-chart"/></svg></span>
+          <h3>تحلیل و بهبود عملکرد</h3>
+          <p>بررسی داده‌های Search Console و ابزارهای تحلیلی برای شناسایی فرصت‌های بهبود.</p>
+        </article>
       </div>
     </section>
 
-    <!-- Contact -->
-    <section id="contact">
-      <div class="container">
-        <div class="contact-box">
-          <div>
-            <h2>درباره پروژه‌تان صحبت کنیم؟</h2>
-            <p>
-              برای همکاری، دریافت مشاوره یا بررسی نیازهای وب‌سایت،
-              از طریق پروفایل گیت‌هاب با من در ارتباط باشید.
-            </p>
-          </div>
-
-          <a
-            class="btn btn-primary"
-            href="https://github.com/mojidiweb"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            پروفایل گیت‌هاب من ↗
+    <section class="container section reveal" id="contact">
+      <div class="contact-panel">
+        <div>
+          <div class="section-kicker">LET'S WORK TOGETHER / همکاری</div>
+          <h2>برای پروژه بعدی آماده‌اید؟</h2>
+          <p>
+            اگر به طراحی سایت، توسعه وردپرس یا بهینه‌سازی وب‌سایت نیاز دارید،
+            می‌توانیم درباره هدف پروژه و راهکار مناسب گفت‌وگو کنیم.
+          </p>
+        </div>
+        <div class="contact-actions">
+          <a class="btn btn-primary" href="https://github.com/mojidiweb" target="_blank" rel="noopener noreferrer">
+            <svg class="icon"><use href="#i-code"/></svg>
+            پروفایل گیت‌هاب
+          </a>
+          <a class="btn btn-outline" href="#projects">
+            دیدن نمونه‌کارها
+            <svg class="icon"><use href="#i-arrow"/></svg>
           </a>
         </div>
       </div>
     </section>
-
   </main>
 
   <footer>
     <div class="container footer-inner">
-      <span>© <span id="year">2026</span> مجیدی‌پور — طراحی سایت، توسعه و سئو</span>
-      <a class="back-top" href="#home">بازگشت به بالا ↑</a>
+      <span>طراحی و توسعه با دقت و علاقه توسط <strong>مجیدی‌پور</strong></span>
+      <span>© <span id="year"></span> | تمامی حقوق محفوظ است.</span>
     </div>
   </footer>
 
   <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
+    document.getElementById("year").textContent =
+      new Intl.DateTimeFormat("fa-IR", { year: "numeric" }).format(new Date());
+
+    const revealItems = document.querySelectorAll(".reveal");
+
+    if ("IntersectionObserver" in window) {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.08 });
+
+      revealItems.forEach((item) => observer.observe(item));
+    } else {
+      revealItems.forEach((item) => item.classList.add("visible"));
+    }
   </script>
 
 </body>
