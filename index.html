@@ -573,6 +573,18 @@
         linear-gradient(135deg, #14253a, #0d1728);
     }
 
+    
+.project-cover .project-screenshot {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  display: block;
+}
+
+
     .project-cover::before {
       content: "";
       position: absolute;
@@ -1068,10 +1080,17 @@
 
       <div class="projects-grid">
         <article class="project-card">
-          <div class="project-cover">
-            <span class="project-number">PROJECT / 01</span>
-            <div class="project-logo"><svg class="icon"><use href="#i-globe"/></svg></div>
-          </div>
+         
+<div class="project-cover">
+  <img
+    class="project-screenshot"
+    src="https://raw.githubusercontent.com/mojidiweb/mojidiweb.github.io/main/abnab-home.PNG"
+    alt="تصویر وب‌سایت آب‌ناب، نمونه‌کار طراحی و توسعه وب"
+    loading="lazy"
+  >
+  <span class="project-number">PROJECT / 01</span>
+</div>
+
           <div class="project-body">
             <h3>آب‌ناب | تجهیزات تصفیه آب</h3>
             <p>
@@ -1089,10 +1108,17 @@
         </article>
 
         <article class="project-card">
-          <div class="project-cover">
-            <span class="project-number">PROJECT / 02</span>
-            <div class="project-logo"><svg class="icon"><use href="#i-layers"/></svg></div>
-          </div>
+         
+<div class="project-cover">
+  <img
+    class="project-screenshot"
+    src="https://raw.githubusercontent.com/mojidiweb/mojidiweb.github.io/main/mogallery-home.PNG"
+    alt="تصویر وب‌سایت موژان گالری، فروشگاه آنلاین محصولات دکوراتیو"
+    loading="lazy"
+  >
+  <span class="project-number">PROJECT / 02</span>
+</div>
+
           <div class="project-body">
             <h3>موژان گالری | فروشگاه آنلاین</h3>
             <p>
