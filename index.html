@@ -1073,6 +1073,36 @@ section.section::after {
 }
 
 
+/* Keep glow behind card content */
+.panel::before,
+.skill-card::before,
+.project-card::before {
+  z-index: 0;
+}
+
+/* Keep card content above the glow */
+.panel > *,
+.skill-card > *,
+.project-card > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Preserve project screenshot and number layers */
+.project-cover {
+  position: relative;
+  z-index: 1;
+}
+
+.project-cover .project-screenshot {
+  z-index: 0;
+}
+
+.project-cover .project-number {
+  z-index: 2;
+}
+
+    
   </style>
 </head>
 
