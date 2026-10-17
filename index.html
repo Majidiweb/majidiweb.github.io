@@ -808,106 +808,270 @@
       .footer-inner { flex-direction: column; align-items: flex-start; }
     }
 
-    
-/* ===== Premium Light Sections ===== */
-.section-light {
-  --text: #182431;
-  --muted: #65717d;
-  --line: rgba(16, 24, 32, 0.11);
+/* ==========================================
+   MOJIDIPOUR PORTFOLIO — PREMIUM DARK GLOW
+   Continuous gradient / glass cards / soft light
+========================================== */
 
+:root {
+  --bg: #0b1422;
+  --panel: rgba(21, 35, 53, 0.78);
+  --panel2: rgba(29, 47, 68, 0.88);
+  --mint: #71beb0;
+  --mint-light: #b1f0df;
+  --blue: #82aaff;
+  --text: #f3f7fc;
+  --muted: #aab8ca;
+  --line: rgba(190, 218, 235, 0.14);
+  --radius: 24px;
+}
+
+/* یک پس‌زمینه پیوسته برای تمام صفحه */
+html {
+  background: #0b1422;
+  scroll-behavior: smooth;
+}
+
+body {
+  position: relative;
+  color: var(--text);
+  background:
+    radial-gradient(
+      ellipse at 12% 8%,
+      rgba(113, 190, 176, 0.13),
+      transparent 32%
+    ),
+    radial-gradient(
+      ellipse at 88% 28%,
+      rgba(92, 125, 177, 0.13),
+      transparent 34%
+    ),
+    radial-gradient(
+      ellipse at 20% 58%,
+      rgba(113, 190, 176, 0.07),
+      transparent 35%
+    ),
+    radial-gradient(
+      ellipse at 85% 88%,
+      rgba(86, 119, 165, 0.12),
+      transparent 32%
+    ),
+    linear-gradient(
+      145deg,
+      #0b1422 0%,
+      #111e30 35%,
+      #142337 62%,
+      #0c1727 100%
+    );
+  background-attachment: fixed;
+}
+
+/* جلوگیری از تغییر ناگهانی رنگ سکشن‌ها */
+section.section,
+section.section-light {
   position: relative;
   isolation: isolate;
   color: var(--text);
+  background: transparent !important;
 }
 
-.section-light::before {
+/* خنثی کردن پس‌زمینه روشن نسخه قبلی */
+section.section-light::before {
+  background: transparent !important;
+}
+
+section.section-light {
+  --text: #f3f7fc;
+  --muted: #aab8ca;
+  --line: rgba(190, 218, 235, 0.14);
+}
+
+/* هاله ظریف در مرز بالایی هر سکشن */
+section.section::after {
   content: "";
   position: absolute;
   z-index: -1;
   top: 0;
-  bottom: 0;
   left: 50%;
-  width: 100vw;
   transform: translateX(-50%);
-  background: #f4f5f4;
+  width: min(100%, 1100px);
+  height: 1px;
+  pointer-events: none;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(113, 190, 176, 0.25),
+    rgba(130, 170, 255, 0.18),
+    transparent
+  );
+  opacity: 0.8;
 }
 
-.section-light .section-kicker {
-  color: #397d70;
+/* کارت‌ها: شیشه‌ای، عمیق و دارای بوردر */
+.panel,
+.skill-card,
+.project-card {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(
+    145deg,
+    rgba(27, 44, 64, 0.91),
+    rgba(16, 29, 46, 0.88)
+  ) !important;
+  border: 1px solid rgba(190, 218, 235, 0.16) !important;
+  border-radius: var(--radius);
+  box-shadow:
+    0 15px 40px rgba(0, 0, 0, 0.17),
+    inset 0 1px 0 rgba(255, 255, 255, 0.035);
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease,
+    background 0.3s ease;
 }
 
-.section-light .section-intro {
-  color: #65717d;
+/* نور محو داخل کارت‌ها */
+.panel::before,
+.skill-card::before,
+.project-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  border-radius: inherit;
+  background: radial-gradient(
+    circle at 0% 0%,
+    rgba(113, 190, 176, 0.09),
+    transparent 48%
+  );
+  opacity: 0.8;
+  transition: opacity 0.3s ease;
 }
 
-.section-light .panel,
-.section-light .skill-card,
-.section-light .project-card {
-  background: #ffffff;
-  border-color: rgba(16, 24, 32, 0.09);
-  box-shadow: 0 12px 35px rgba(16, 24, 32, 0.045);
+/* درخشش کنترل‌شده هنگام حرکت ماوس */
+.panel:hover,
+.skill-card:hover,
+.project-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(113, 190, 176, 0.42) !important;
+  box-shadow:
+    0 20px 48px rgba(0, 0, 0, 0.24),
+    0 0 24px rgba(113, 190, 176, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.07);
 }
 
-.section-light .panel:hover,
-.section-light .project-card:hover {
-  border-color: rgba(57, 125, 112, 0.32);
-  box-shadow: 0 18px 42px rgba(16, 24, 32, 0.075);
+.panel:hover::before,
+.skill-card:hover::before,
+.project-card:hover::before {
+  opacity: 1;
 }
 
-.section-light .skill-card:hover {
-  background: #ffffff;
-  border-color: rgba(57, 125, 112, 0.32);
+/* عنوان‌ها و جزئیات تأکیدی */
+.section-kicker {
+  color: var(--mint-light);
+  text-shadow: 0 0 18px rgba(113, 190, 176, 0.18);
 }
 
-.section-light .about-text,
-.section-light .strength p,
-.section-light .about-highlight p {
-  color: #65717d;
+.section-intro,
+.about-text,
+.strength p,
+.about-highlight p,
+.project-body > p {
+  color: var(--muted);
 }
 
-.section-light .about-highlight {
-  background: #f0f7f4;
-  border-color: rgba(57, 125, 112, 0.13);
+/* هایلایت‌های بخش درباره من */
+.about-highlight {
+  background: linear-gradient(
+    135deg,
+    rgba(113, 190, 176, 0.10),
+    rgba(113, 190, 176, 0.035)
+  ) !important;
+  border: 1px solid rgba(113, 190, 176, 0.19) !important;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.025);
 }
 
-.section-light .strength-icon,
-.section-light .skill-icon {
-  color: #397d70;
-  background: #edf5f2;
-  border-color: rgba(57, 125, 112, 0.12);
+/* آیکون‌ها */
+.strength-icon,
+.skill-icon {
+  color: var(--mint-light);
+  background: linear-gradient(
+    145deg,
+    rgba(113, 190, 176, 0.15),
+    rgba(113, 190, 176, 0.055)
+  ) !important;
+  border: 1px solid rgba(113, 190, 176, 0.20) !important;
+  box-shadow: 0 0 18px rgba(113, 190, 176, 0.045);
 }
 
-.section-light .project-body h3 {
-  color: #182431;
+/* برچسب‌های پروژه */
+.project-tags span {
+  color: #c2e9df;
+  background: rgba(113, 190, 176, 0.075) !important;
+  border: 1px solid rgba(113, 190, 176, 0.16) !important;
 }
 
-.section-light .project-body > p {
-  color: #65717d;
+/* لینک‌های پروژه */
+.project-link {
+  color: var(--mint-light);
 }
 
-.section-light .project-tags span {
-  color: #326f63;
-  background: #f0f7f4;
-  border-color: rgba(57, 125, 112, 0.14);
+.project-link:hover {
+  text-shadow: 0 0 16px rgba(113, 190, 176, 0.28);
 }
 
-.section-light .project-link {
-  color: #326f63;
+/* تصاویر پروژه‌ها */
+.project-screenshot {
+  transition: transform 0.45s ease, filter 0.45s ease;
 }
 
-.section-light .project-cover:has(.project-screenshot)::before,
-.section-light .project-cover:has(.project-screenshot)::after {
-  display: none;
+.project-card:hover .project-screenshot {
+  transform: scale(1.025);
+  filter: saturate(1.05);
 }
 
-/* Respect reduced-motion preferences */
-@media (prefers-reduced-motion: reduce) {
-  .section-light .panel,
-  .section-light .skill-card,
-  .section-light .project-card {
-    box-shadow: none;
+/* هاله پس‌زمینه بخش معرفی */
+#hero {
+  background: transparent !important;
+}
+
+#hero .hero-card,
+#hero .hero-visual {
+  filter: drop-shadow(0 12px 32px rgba(0, 0, 0, 0.12));
+}
+
+/* سازگاری با موبایل */
+@media (max-width: 768px) {
+  body {
+    background-attachment: scroll;
+  }
+
+  .panel,
+  .skill-card,
+  .project-card {
+    box-shadow:
+      0 10px 28px rgba(0, 0, 0, 0.15),
+      inset 0 1px 0 rgba(255, 255, 255, 0.035);
+  }
+
+  .panel:hover,
+  .skill-card:hover,
+  .project-card:hover {
+    transform: translateY(-2px);
   }
 }
+
+/* احترام به تنظیمات کاهش حرکت */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+}
+
 
   </style>
 </head>
