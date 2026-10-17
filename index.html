@@ -1102,6 +1102,81 @@ section.section::after {
   z-index: 2;
 }
 
+
+/* Portfolio project cards — refined preview */
+
+.project-cover {
+  aspect-ratio: 16 / 9;
+  min-height: 0;
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  background: #14253a;
+}
+
+/* Remove decorative circles from website screenshots */
+.project-cover::before,
+.project-cover::after {
+  display: none;
+}
+
+/* Clear, consistent project previews */
+.project-cover .project-screenshot {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: top center;
+  transition: transform 0.5s ease;
+}
+
+/* Subtle dark gradient for the project number */
+.project-cover::after {
+  content: "";
+  display: block;
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  width: auto;
+  height: auto;
+  border: 0;
+  border-radius: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(5, 12, 22, 0.38),
+    transparent 35%,
+    transparent 70%,
+    rgba(5, 12, 22, 0.12)
+  );
+  pointer-events: none;
+}
+
+.project-cover .project-number {
+  z-index: 2;
+  padding: 5px 9px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  background: rgba(7, 17, 29, 0.7);
+  backdrop-filter: blur(8px);
+}
+
+.project-card:hover .project-screenshot {
+  transform: scale(1.035);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .project-cover .project-screenshot {
+    transition: none;
+  }
+
+  .project-card:hover .project-screenshot {
+    transform: none;
+  }
+}
+
     
   </style>
 </head>
