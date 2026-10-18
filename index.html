@@ -1102,6 +1102,238 @@ section.section::after {
   z-index: 2;
 }
 
+
+    /* ==========================================
+       MAJIDIWEB — LUXURY LIGHT / LAVENDER EDITION
+       Inspired by the supplied reference image
+    ========================================== */
+    :root {
+      --bg: #fbfaff;
+      --panel: rgba(255,255,255,.88);
+      --panel2: #f4efff;
+      --mint: #7950e8;
+      --mint-light: #a78bfa;
+      --blue: #5c3cc9;
+      --text: #211744;
+      --muted: #77718e;
+      --line: rgba(111,78,207,.15);
+      --radius: 20px;
+    }
+    html { background: #fbfaff; }
+    body {
+      color: var(--text);
+      background:
+        radial-gradient(ellipse at 12% 5%, rgba(174,145,255,.17), transparent 30%),
+        radial-gradient(ellipse at 92% 30%, rgba(207,191,255,.22), transparent 31%),
+        linear-gradient(180deg,#fff 0%,#faf8ff 40%,#fff 75%,#f8f5ff 100%);
+      background-attachment: fixed;
+    }
+    .site-header {
+      background: rgba(255,255,255,.82);
+      border-bottom: 1px solid rgba(111,78,207,.10);
+      box-shadow: 0 6px 28px rgba(47,26,100,.035);
+    }
+    .brand { color:#211744; }
+    .brand-mark {
+      color:#fff;
+      background:linear-gradient(135deg,#9d7aff,#6338d6);
+      border-radius:14px;
+      box-shadow:0 8px 24px rgba(111,70,220,.24);
+    }
+    .nav-links { color:#77718e; }
+    .nav-links a:hover { color:#6338d6; }
+    .nav-cta {
+      color:#fff;
+      background:linear-gradient(120deg,#9168f2,#6338d6);
+      border:1px solid transparent;
+      box-shadow:0 8px 22px rgba(111,70,220,.18);
+    }
+    .nav-cta:hover { color:#fff; background:#542bbd; }
+    .eyebrow {
+      color:#6943d0;
+      background:rgba(126,86,231,.08);
+      border-color:rgba(126,86,231,.15);
+    }
+    .live-dot {
+      background:#7950e8;
+      box-shadow:0 0 0 5px rgba(121,80,232,.12);
+    }
+    .gradient-text {
+      background:linear-gradient(100deg,#9d7aff,#6535d6 65%,#3e2a9e);
+      -webkit-background-clip:text;background-clip:text;color:transparent;
+    }
+    .hero { min-height:550px; padding-block:70px 60px; gap:48px; }
+    h1 { color:#211744; }
+    .hero-description,.section-intro,.about-text,.strength p,
+    .about-highlight p,.project-body>p,.service-card p { color:#77718e; }
+    .btn-primary {
+      color:#fff;
+      background:linear-gradient(120deg,#956ef2,#6437d7);
+      box-shadow:0 10px 28px rgba(111,70,220,.22);
+    }
+    .btn-primary:hover { box-shadow:0 14px 32px rgba(111,70,220,.3); }
+    .btn-outline { color:#5635bd; border-color:rgba(111,78,207,.25); background:rgba(255,255,255,.75); }
+    .btn-outline:hover { border-color:#7950e8; background:#f5f0ff; }
+    .hero-meta .icon { color:#7950e8; }
+    .visual-glow { background:rgba(150,119,245,.22); }
+    .visual-ring { border-color:rgba(121,80,232,.17); }
+    .visual-ring::before,.visual-ring::after { background:#7950e8; box-shadow:0 0 20px rgba(121,80,232,.5); }
+    .hero-card {
+      color:#fff;
+      background:linear-gradient(145deg,#fff,#f4efff);
+      border:1px solid rgba(121,80,232,.16);
+      box-shadow:0 30px 80px rgba(65,43,125,.13),inset 0 1px rgba(255,255,255,.9);
+    }
+    .hero-card .card-status,.hero-card .card-slogan { color:#25174e; }
+    .hero-card .card-caption,.hero-card .card-bottom { color:#77718e; }
+    .card-symbol,.mini-stack span {
+      color:#673dd4;background:#eee7ff;border-color:rgba(121,80,232,.14);
+    }
+    .card-slogan em { color:#7046dd; }
+    .card-divider { background:rgba(111,78,207,.14); }
+    .floating-tag {
+      color:#3c2a75;background:rgba(255,255,255,.94);
+      border-color:rgba(121,80,232,.15);
+      box-shadow:0 15px 38px rgba(47,26,100,.12);
+    }
+    .floating-tag .icon { color:#7950e8; }
+    .section { padding-block:68px; }
+    .section-kicker { color:#7950e8; }
+    h2 { color:#26174e; }
+    .panel,.skill-card,.project-card {
+      background:linear-gradient(145deg,rgba(255,255,255,.98),rgba(248,245,255,.96)) !important;
+      border:1px solid rgba(111,78,207,.14) !important;
+      box-shadow:0 12px 32px rgba(48,29,101,.055),inset 0 1px 0 #fff;
+    }
+    .panel:hover,.skill-card:hover,.project-card:hover {
+      border-color:rgba(121,80,232,.36) !important;
+      box-shadow:0 18px 42px rgba(65,43,125,.11),0 0 24px rgba(121,80,232,.07);
+    }
+    .panel::before,.skill-card::before,.project-card::before {
+      background:radial-gradient(circle at 0% 0%,rgba(167,139,250,.13),transparent 50%);
+    }
+    .about-highlight {
+      background:linear-gradient(135deg,rgba(153,119,242,.10),rgba(153,119,242,.035)) !important;
+      border-color:rgba(121,80,232,.16) !important;
+    }
+    .about-highlight .icon,.strength-icon,.skill-icon { color:#7046dd; }
+    .strength-icon,.skill-icon,.service-card .service-icon {
+      background:linear-gradient(145deg,#f0eaff,#faf8ff) !important;
+      border:1px solid rgba(121,80,232,.13) !important;
+    }
+    .skill-card strong,.project-body h3,.service-card h3 { color:#251744; }
+    .project-cover {
+      min-height:210px;
+      background:linear-gradient(135deg,#eee8ff,#f8f5ff);
+    }
+    .project-cover::before,.project-cover::after { display:none; }
+    .project-cover .project-screenshot { object-fit:cover; object-position:top center; }
+    .project-number {
+      top:14px;right:14px;color:#fff;letter-spacing:1px;
+      background:rgba(76,43,160,.88);border:1px solid rgba(255,255,255,.35);
+      border-radius:8px;padding:5px 10px;
+    }
+    .project-tags span {
+      color:#6740cc;background:#f0eaff !important;border-color:rgba(121,80,232,.13) !important;
+    }
+    .project-link { color:#6840cf; }
+    .services-grid { grid-template-columns:repeat(3,minmax(0,1fr)); }
+    .service-card {
+      color:#251744;background:rgba(255,255,255,.84);
+      border:1px solid rgba(111,78,207,.14);border-radius:20px;
+      box-shadow:0 10px 28px rgba(48,29,101,.045);
+    }
+    .service-card:hover { border-color:rgba(121,80,232,.35);box-shadow:0 16px 34px rgba(65,43,125,.09); }
+    .contact-panel {
+      background:
+        radial-gradient(ellipse at 100% 0%,rgba(181,155,255,.22),transparent 50%),
+        linear-gradient(135deg,#fff,#f3edff);
+      border-color:rgba(121,80,232,.17);
+      box-shadow:0 18px 45px rgba(65,43,125,.07);
+    }
+    .contact-panel h2 { color:#26174e; }
+    .contact-panel p { color:#77718e; }
+    .stats-strip {
+      display:grid;grid-template-columns:repeat(4,1fr);gap:16px;
+      margin-top:-10px;margin-bottom:8px;
+      position:relative;z-index:2;
+    }
+    .stat-item {
+      min-height:105px;display:grid;grid-template-columns:42px 1fr;
+      grid-template-rows:auto auto;align-content:center;align-items:center;
+      column-gap:12px;padding:18px 20px;
+      border:1px solid rgba(121,80,232,.14);border-radius:17px;
+      background:rgba(255,255,255,.83);
+      box-shadow:0 10px 28px rgba(48,29,101,.045);
+    }
+    .stat-icon {
+      grid-row:1/3;width:42px;height:42px;display:grid;place-items:center;
+      color:#7146dd;background:#f0eaff;border-radius:14px;
+    }
+    .stat-item strong {font-size:23px;line-height:1.35;color:#5931c2;}
+    .stat-item small {font-size:11px;color:#77718e;}
+    .site-footer {
+      position:relative;overflow:hidden;margin-top:20px;padding-top:42px;
+      color:#eee8ff;background:
+        radial-gradient(ellipse at 10% 0%,rgba(157,122,255,.2),transparent 35%),
+        linear-gradient(135deg,#291653,#1d103e 65%,#24104b);
+      border-top:1px solid rgba(121,80,232,.22);
+    }
+    .site-footer::before {
+      content:"";position:absolute;width:430px;height:240px;left:-120px;bottom:-170px;
+      border:1px solid rgba(186,161,255,.14);border-radius:50%;pointer-events:none;
+      box-shadow:0 0 0 18px rgba(186,161,255,.025),0 0 0 38px rgba(186,161,255,.02);
+    }
+    .footer-main {
+      display:grid;grid-template-columns:1.4fr .7fr 1fr;gap:55px;padding-bottom:34px;
+      position:relative;
+    }
+    .site-footer .brand {color:#fff;}
+    .site-footer .brand-mark {background:linear-gradient(135deg,#b49aff,#8051ed);color:#fff;}
+    .footer-brand p {max-width:340px;color:#c4b8e5;font-size:12px;line-height:2.2;margin-top:16px;}
+    .footer-column {display:flex;flex-direction:column;gap:9px;align-items:flex-start;}
+    .footer-column h3 {margin:3px 0 8px;font-size:13px;color:#fff;}
+    .footer-column a {font-size:12px;color:#c9bee7;transition:color .2s,transform .2s;}
+    .footer-column a:hover {color:#fff;transform:translateX(-3px);}
+    .footer-bottom {
+      position:relative;display:flex;align-items:center;justify-content:space-between;gap:15px;
+      min-height:62px;border-top:1px solid rgba(255,255,255,.12);
+      color:#c2b6e2;font-size:11px;
+    }
+    .footer-bottom strong {color:#fff;}
+    .back-top {
+      display:grid;place-items:center;width:32px;height:32px;border-radius:50%;
+      color:#fff;border:1px solid rgba(255,255,255,.24);font-size:19px;
+      transition:background .2s,transform .2s;
+    }
+    .back-top:hover {background:rgba(255,255,255,.12);transform:translateY(-3px);}
+    .reveal { transform:translateY(18px); }
+    @media(max-width:900px) {
+      .stats-strip {grid-template-columns:repeat(2,1fr);}
+      .footer-main {gap:30px;}
+    }
+    @media(max-width:650px) {
+      body {background-attachment:scroll;}
+      .hero {padding-block:42px 38px;}
+      .hero-visual {min-height:350px;}
+      .section {padding-block:48px;}
+      .project-cover {min-height:200px;}
+      .stats-strip {grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:0;}
+      .stat-item {padding:13px;min-height:90px;grid-template-columns:34px 1fr;column-gap:8px;}
+      .stat-icon {width:34px;height:34px;border-radius:11px;}
+      .stat-icon .icon {width:19px;height:19px;}
+      .stat-item strong {font-size:20px;}
+      .stat-item small {font-size:10px;}
+      .services-grid {grid-template-columns:1fr;}
+      .footer-main {grid-template-columns:1fr 1fr;gap:28px 18px;}
+      .footer-brand {grid-column:1/-1;}
+      .footer-bottom {padding-block:15px;flex-wrap:wrap;justify-content:flex-start;}
+      .back-top {margin-right:auto;}
+    }
+    @media(prefers-reduced-motion:reduce) {
+      .visual-ring,.hero-card,.floating-tag,.live-dot {animation:none !important;}
+    }
+
   </style>
 </head>
 
@@ -1269,6 +1501,13 @@ section.section::after {
       </div>
     </section>
 
+    <section class="container stats-strip reveal" aria-label="خلاصه تجربه کاری">
+      <div class="stat-item"><span class="stat-icon"><svg class="icon"><use href="#i-briefcase"/></svg></span><strong><span data-count="8">۸+</span></strong><small>سال تجربه کاری</small></div>
+      <div class="stat-item"><span class="stat-icon"><svg class="icon"><use href="#i-layers"/></svg></span><strong>۲</strong><small>نمونه‌کار شاخص آنلاین</small></div>
+      <div class="stat-item"><span class="stat-icon"><svg class="icon"><use href="#i-check"/></svg></span><strong>۳</strong><small>حوزه اصلی تخصص</small></div>
+      <div class="stat-item"><span class="stat-icon"><svg class="icon"><use href="#i-chart"/></svg></span><strong>۱۰۰٪</strong><small>تمرکز بر کیفیت اجرا</small></div>
+    </section>
+
     <section class="container section section-light reveal" id="about">
       <div class="section-heading">
         <div>
@@ -1379,7 +1618,7 @@ section.section::after {
 <div class="project-cover">
   <img
     class="project-screenshot"
-    src="https://raw.githubusercontent.com/mojidiweb/mojidiweb.github.io/main/abnab-home.PNG"
+    src="https://raw.githubusercontent.com/majidiweb/majidiweb.github.io/main/abnab-home.PNG"
     alt="تصویر وب‌سایت آب‌ناب، نمونه‌کار طراحی و توسعه وب"
     loading="lazy"
   >
@@ -1407,7 +1646,7 @@ section.section::after {
 <div class="project-cover">
   <img
     class="project-screenshot"
-    src="https://raw.githubusercontent.com/mojidiweb/mojidiweb.github.io/main/mogallery-home.PNG"
+    src="https://raw.githubusercontent.com/majidiweb/majidiweb.github.io/main/mogallery-home.PNG"
     alt="تصویر وب‌سایت موژان گالری، فروشگاه آنلاین محصولات دکوراتیو"
     loading="lazy"
   >
@@ -1485,23 +1724,46 @@ section.section::after {
           </p>
         </div>
         <div class="contact-actions">
-          <a class="btn btn-primary" href="https://github.com/mojidiweb" target="_blank" rel="noopener noreferrer">
-            <svg class="icon"><use href="#i-code"/></svg>
-            پروفایل گیت‌هاب
+          <a class="btn btn-primary" href="https://t.me/Majidiweb" target="_blank" rel="noopener noreferrer">
+            <svg class="icon"><use href="#i-mail"/></svg>
+            گفت‌وگو در تلگرام
           </a>
-          <a class="btn btn-outline" href="#projects">
-            دیدن نمونه‌کارها
-            <svg class="icon"><use href="#i-arrow"/></svg>
+          <a class="btn btn-outline" href="tel:09398303872">
+            <svg class="icon"><use href="#i-mobile"/></svg>
+            ۰۹۳۹۸۳۰۳۸۷۲
           </a>
         </div>
       </div>
     </section>
   </main>
 
-  <footer>
-    <div class="container footer-inner">
+  <footer class="site-footer">
+    <div class="container footer-main">
+      <div class="footer-brand">
+        <a class="brand" href="#home" aria-label="بازگشت به ابتدای صفحه">
+          <span class="brand-mark"><svg class="icon"><use href="#i-code"/></svg></span>
+          <span>مجیدی‌پور <span class="gradient-text">.</span></span>
+        </a>
+        <p>طراحی سایت، توسعه وب و سئو؛ با تمرکز بر تجربه کاربری، عملکرد و رشد کسب‌وکار.</p>
+      </div>
+      <div class="footer-column">
+        <h3>دسترسی سریع</h3>
+        <a href="#about">درباره من</a>
+        <a href="#services">خدمات</a>
+        <a href="#projects">نمونه‌کارها</a>
+        <a href="#skills">مهارت‌ها</a>
+      </div>
+      <div class="footer-column">
+        <h3>راه‌های ارتباطی</h3>
+        <a href="tel:09398303872" dir="ltr">۰۹۳۹۸۳۰۳۸۷۲</a>
+        <a href="https://t.me/Majidiweb" target="_blank" rel="noopener noreferrer">تلگرام: @Majidiweb</a>
+        <a href="https://github.com/majidiweb" target="_blank" rel="noopener noreferrer">GitHub: majidiweb</a>
+      </div>
+    </div>
+    <div class="container footer-bottom">
       <span>طراحی و توسعه با دقت و علاقه توسط <strong>مجیدی‌پور</strong></span>
       <span>© <span id="year"></span> | تمامی حقوق محفوظ است.</span>
+      <a class="back-top" href="#home" aria-label="بازگشت به بالا">↑</a>
     </div>
   </footer>
 
